@@ -2,20 +2,17 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    // Tell cargo to look for the C library
+    // Tell cargo to look for the C library in the build directory
+    // The library should be built with CMake before running cargo build
     println!("cargo:rustc-link-search=native=build");
     println!("cargo:rustc-link-lib=static=calculator");
 
     // Tell cargo to invalidate the built crate whenever the C code changes
     println!("cargo:rerun-if-changed=c_lib/calculator.h");
     println!("cargo:rerun-if-changed=c_lib/calculator.c");
+    println!("cargo:rerun-if-changed=build/libcalculator.a");
 
-    // Compile the C library
-    cc::Build::new()
-        .file("c_lib/calculator.c")
-        .compile("calculator");
-
-    // Generate bindings
+    // Generate bindings from the C header file
     let bindings = bindgen::Builder::default()
         .header("c_lib/calculator.h")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
