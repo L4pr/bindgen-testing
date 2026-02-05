@@ -7,10 +7,9 @@ fn main() {
     println!("cargo:rustc-link-search=native=build");
     println!("cargo:rustc-link-lib=static=calculator");
 
-    // Tell cargo to invalidate the built crate whenever the C code changes
+    // Tell cargo to invalidate the built crate whenever the C header changes
+    // Note: If C source changes, you must rebuild the library with CMake first
     println!("cargo:rerun-if-changed=c_lib/calculator.h");
-    println!("cargo:rerun-if-changed=c_lib/calculator.c");
-    println!("cargo:rerun-if-changed=build/libcalculator.a");
 
     // Generate bindings from the C header file
     let bindings = bindgen::Builder::default()
