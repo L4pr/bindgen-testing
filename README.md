@@ -1,6 +1,6 @@
 # bindgen-testing
 
-A comprehensive demonstration project showing how to build a C library with CMake and seamlessly call it from Rust using bindgen for automatic FFI binding generation.
+A comprehensive demonstration project showing how to build a C library with CMake and call it from Rust. This project uses bindgen for automatic FFI binding generation.
 
 ## What This Repository Does
 
