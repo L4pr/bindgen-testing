@@ -5,6 +5,8 @@ fn main() {
     println!("cargo:rustc-link-search=native=build");
     println!("cargo:rustc-link-lib=static=calculator");
 
+    println!("cargo:rerun-if-changed=c_lib");
+
     let bindings = bindgen::Builder::default()
         .header("c_lib/wrapper.h")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))

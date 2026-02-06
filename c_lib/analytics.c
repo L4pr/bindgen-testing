@@ -1,8 +1,10 @@
 #include "analytics.h"
 #include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 float calculate_distance(DataPoint p) {
+  printf("Point Label: %s\n", p.label);
   return sqrt(p.x * p.x + p.y * p.y);
 }
 
