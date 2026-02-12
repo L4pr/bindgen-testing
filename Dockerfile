@@ -4,12 +4,16 @@ WORKDIR /deps
 
 COPY Cargo.toml Cargo.lock ./
 
+RUN apt-get update && apt-get install -y \
+    clang \
+    libclang-dev
+
 RUN mkdir src && echo "fn main() {}" > src/main.rs
 
-RUN cargo vendor > vendor-config.toml
+RUN cargo vendor /deps/vendor > vendor-config.toml
 
 RUN mkdir -p $CARGO_HOME && cat vendor-config.toml >> $CARGO_HOME/config.toml
 
 RUN rm Cargo.toml Cargo.lock vendor-config.toml
 
-WORKDIR /workspaces/your-app
+WORKDIR /workspaces/offline-rust
