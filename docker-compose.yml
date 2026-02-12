@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  rust-app:
+    image: l4pr/offline-rust-deps:0.1
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  rust-app-latest:
+    image: l4pr/offline-rust-deps:latest
+
+    build:
+      context: .
+      dockerfile: Dockerfile

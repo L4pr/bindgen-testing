@@ -1,0 +1,11 @@
+# The language to output
+language = "C++"
+
+# Wrap everything in extern "C" automatically
+cpp_compat = true
+
+# Optional: Wrap code in a namespace
+# namespace = "rust"
+
+# Add a header guard (#ifndef RUST_CORE_H)
+include_guard = "RUST_CORE_H"

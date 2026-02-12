@@ -9,6 +9,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 add_library(calculator STATIC
         c_lib/calculator.c
         c_lib/analytics.c
+        include/main.cpp
 )
 
 # Include directories

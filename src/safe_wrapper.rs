@@ -36,7 +36,7 @@ impl Point {
 
         let raw_p = raw::DataPoint {
             x: self.x,
-            y: self.y,
+            y: self.y, 
             label: c_label.as_ptr(),
         };
 
