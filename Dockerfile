@@ -1,4 +1,4 @@
-FROM rust:trixie
+FROM rust:latest
 
 WORKDIR /deps
 
