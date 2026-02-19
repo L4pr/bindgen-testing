@@ -4,11 +4,23 @@ WORKDIR /deps
 
 COPY Cargo.toml Cargo.lock ./
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -yq --no-install-recommends \
     clang \
     libclang-dev \
     cmake \
-    build-essential
+    build-essential \
+    curl \
+    git \
+    uuid-dev \
+    libjansson-dev \
+    libcurl4-openssl-dev \
+    default-jdk \
+    libffi-dev \
+    libzip-dev \
+    libxml2-dev \
+    libczmq-dev \
+    libcpputest-dev \
+    rapidjson-dev
 
 RUN mkdir src && echo "fn main() {}" > src/main.rs
 
