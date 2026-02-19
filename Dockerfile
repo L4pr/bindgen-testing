@@ -6,7 +6,8 @@ COPY Cargo.toml Cargo.lock ./
 
 RUN apt-get update && apt-get install -y \
     clang \
-    libclang-dev
+    libclang-dev \
+    cmake
 
 RUN mkdir src && echo "fn main() {}" > src/main.rs
 
