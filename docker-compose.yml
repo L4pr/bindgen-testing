@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   rust-app:
-    image: ${DOCKERHUB_USERNAME}/offline-rust-deps:0.3
+    image: ${DOCKERHUB_USERNAME}/offline-rust-deps:0.4
 
     build:
       context: .
