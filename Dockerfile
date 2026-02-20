@@ -9,18 +9,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     libclang-dev \
     cmake \
     build-essential \
-    curl \
-    git \
-    uuid-dev \
-    libjansson-dev \
-    libcurl4-openssl-dev \
-    default-jdk \
-    libffi-dev \
-    libzip-dev \
-    libxml2-dev \
-    libczmq-dev \
-    libcpputest-dev \
-    rapidjson-dev
+    maven
 
 RUN mkdir src && echo "fn main() {}" > src/main.rs
 
