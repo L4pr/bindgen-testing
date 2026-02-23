@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     libclang-dev \
     cmake \
     build-essential \
-    maven
+    maven \
+    zip
 
 RUN mkdir src && echo "fn main() {}" > src/main.rs
 
