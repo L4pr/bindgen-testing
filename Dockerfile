@@ -15,6 +15,6 @@ RUN mkdir src && echo "fn main() {}" > src/main.rs
 
 RUN cargo vendor /deps/vendor > vendor-config.toml
 
-RUN mkdir -p $CARGO_HOME && cat vendor-config.toml >> deps/config.toml
+RUN mkdir -p $CARGO_HOME && cat vendor-config.toml >> /deps/config.toml
 
 RUN rm Cargo.toml Cargo.lock vendor-config.toml
